@@ -2,17 +2,18 @@
 
 /* 1. Variables & Theme Overrides */
 :root {
-    --color-bg: #FFFFFF;
-    --color-text: #0F172A;
-    /* Dark Navy Blue */
-    --color-accent: #0EA5E9;
-    /* Sky Blue */
+    --color-bg: #F8FAFC;
+    --color-text: #0A2540;
+    /* Deep Dark Blue */
+    --color-accent: #2B6CB0;
+    /* Strong Mountain Blue */
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
     font-family: var(--font-main);
     color: var(--color-text);
+    background-color: var(--color-bg);
     -webkit-font-smoothing: antialiased;
 }
 
