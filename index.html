@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea-to-Sky Collective | Minimalist Art from the Coast Range</title>
+    <meta name="description" content="Modern, cultural store specializing in minimalist vector art inspired by Vancouver and Whistler.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Sea-to-Sky Collective</a>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="#" class="nav-link">Cart (0)</a>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="products.html" class="nav-link">Shop</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Cart (0)</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('assets/images/hero_bg.jpg');">
+        <div class="hero-content">
+            <h1>Minimalist Art from the Coast Range</h1>
+            <p>Capturing the spirit of the Sea-to-Sky corridor in clean lines and negative space.</p>
+            <a href="products.html" class="btn">Shop Prints</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="section container">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Collections</h2>
+        <div class="grid grid-3">
+            <!-- Category 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/images/product_placeholder.jpg" alt="Art Prints">
+                </div>
+                <div class="product-info">
+                    <h3>Art Prints</h3>
+                    <p class="text-small">Vector silhouettes & line art</p>
+                    <a href="products.html" class="btn-outline" style="margin-top: 1rem; display: inline-block;">View Collection</a>
+                </div>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="product-card">
+                <div class="product-image" style="background-color: #eee; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #999;">Coming Soon</span>
+                </div>
+                <div class="product-info">
+                    <h3>Stickers</h3>
+                    <p class="text-small">Vinyl decals for your gear</p>
+                </div>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="product-card">
+                <div class="product-image" style="background-color: #eee; display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #999;">Future Release</span>
+                </div>
+                <div class="product-info">
+                    <h3>Apparel</h3>
+                    <p class="text-small">Ethically sourced essentials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="logo">Sea-to-Sky Collective</div>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Email</a>
+            </div>
+            <p class="copyright">&copy; 2025 Sea-to-Sky Collective. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
