@@ -1,334 +1,162 @@
-/* Sea-to-Sky Collective - Main Stylesheet */
+/* Sea-to-Sky Collective - Main Stylesheet (Bootstrap 5 Overrides) */
 
-/* 1. Variables & Reset */
+/* 1. Variables & Theme Overrides */
 :root {
-    /* Colors */
     --color-bg: #FFFFFF;
     --color-text: #111111;
-    --color-accent: #1A3C34; /* Deep Forest Green */
-    --color-gray-light: #F5F5F5;
-    --color-gray-medium: #E0E0E0;
-    
-    /* Typography */
+    --color-accent: #1A3C34;
+    /* Deep Forest Green */
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    
-    /* Spacing */
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 1rem;
-    --spacing-md: 2rem;
-    --spacing-lg: 4rem;
-    --spacing-xl: 8rem;
-    
-    /* Layout */
-    --container-width: 1200px;
-    --header-height: 80px;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: var(--font-main);
-    background-color: var(--color-bg);
     color: var(--color-text);
-    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s ease;
-}
-
-a:hover {
-    opacity: 0.7;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-ul {
-    list-style: none;
-}
-
-/* 2. Typography */
-h1, h2, h3, h4 {
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
-    line-height: 1.2;
-    margin-bottom: var(--spacing-sm);
-}
-
-h1 {
-    font-size: 2.5rem;
     letter-spacing: -0.02em;
 }
 
-h2 {
-    font-size: 2rem;
-    letter-spacing: -0.01em;
-}
-
-h3 {
-    font-size: 1.5rem;
-}
-
-p {
-    margin-bottom: var(--spacing-sm);
-}
-
-.text-small {
-    font-size: 0.875rem;
-    color: #666;
-}
-
-/* 3. Layout Utilities */
-.container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-}
-
-.section {
-    padding: var(--spacing-lg) 0;
-}
-
-.grid {
-    display: grid;
-    gap: var(--spacing-md);
-}
-
-.grid-3 {
-    grid-template-columns: repeat(1, 1fr);
-}
-
-@media (min-width: 768px) {
-    .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--color-text);
-    color: var(--color-bg);
-    font-weight: 500;
-    border: 1px solid var(--color-text);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.btn:hover {
-    background-color: transparent;
-    color: var(--color-text);
-}
-
-.btn-outline {
-    background-color: transparent;
-    color: var(--color-text);
-}
-
-.btn-outline:hover {
-    background-color: var(--color-text);
-    color: var(--color-bg);
-}
-
-/* 4. Header & Navigation */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--header-height);
+/* 2. Navbar Customization */
+.navbar {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(5px);
-    z-index: 1000;
-    border-bottom: 1px solid var(--color-gray-light);
-    display: flex;
-    align-items: center;
+    border-bottom: 1px solid #F5F5F5;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-}
-
-.logo {
-    font-size: 1.25rem;
+.navbar-brand {
     font-weight: 700;
-    letter-spacing: -0.03em;
     text-transform: uppercase;
-}
-
-.nav-links {
-    display: none; /* Hidden on mobile by default */
-}
-
-@media (min-width: 768px) {
-    .nav-links {
-        display: flex;
-        gap: var(--spacing-md);
-    }
+    letter-spacing: -0.03em;
+    color: var(--color-text);
 }
 
 .nav-link {
-    font-size: 0.9rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-size: 0.9rem;
+    color: var(--color-text) !important;
 }
 
-.mobile-menu-btn {
-    display: block;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
+.nav-link:hover {
+    opacity: 0.7;
 }
 
-@media (min-width: 768px) {
-    .mobile-menu-btn {
-        display: none;
-    }
+.nav-link.active {
+    border-bottom: 2px solid var(--color-text);
 }
 
-/* Mobile Menu Overlay */
-.mobile-menu {
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    background-color: var(--color-bg);
-    padding: var(--spacing-md);
-    border-bottom: 1px solid var(--color-gray-light);
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 999;
-}
-
-.mobile-menu.active {
-    transform: translateY(0);
-}
-
-.mobile-menu ul {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-/* 5. Hero Section */
+/* 3. Hero Section */
 .hero {
     height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--color-gray-light);
     background-size: cover;
     background-position: center;
     position: relative;
-    margin-top: var(--header-height);
+    margin-top: 76px;
+    /* Offset for fixed navbar */
 }
 
 .hero-content {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    padding: 3rem;
     max-width: 600px;
-    padding: var(--spacing-md);
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(2px);
+    border-radius: 2px;
 }
 
-.hero h1 {
-    margin-bottom: var(--spacing-xs);
+/* 4. Buttons */
+.btn-custom {
+    background-color: var(--color-text);
+    color: #fff;
+    border: 1px solid var(--color-text);
+    padding: 0.75rem 2rem;
+    border-radius: 0;
+    /* Square corners for minimalism */
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-md);
-    color: #444;
+.btn-custom:hover {
+    background-color: transparent;
+    color: var(--color-text);
 }
 
-/* 6. Product Cards */
-.product-card {
-    display: flex;
-    flex-direction: column;
+.btn-outline-custom {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+    padding: 0.75rem 2rem;
+    border-radius: 0;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--color-text);
+    color: #fff;
+}
+
+/* 5. Product Cards */
+.card {
+    border: none;
+    border-radius: 0;
     transition: transform 0.2s ease;
+    background: transparent;
 }
 
-.product-card:hover {
+.card:hover {
     transform: translateY(-5px);
 }
 
-.product-image {
-    background-color: var(--color-gray-light);
-    aspect-ratio: 1 / 1; /* Square images */
-    margin-bottom: var(--spacing-sm);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
+.card-img-top {
+    border-radius: 0;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-.product-card:hover .product-image img {
-    transform: scale(1.05);
-}
-
-.product-info {
+.card-body {
+    padding: 1.5rem 0;
     text-align: center;
 }
 
-.product-title {
+.card-title {
     font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
-.product-price {
+.price {
     color: var(--color-accent);
     font-weight: 500;
-    margin-bottom: var(--spacing-sm);
+    display: block;
+    margin-bottom: 1rem;
 }
 
-/* 7. Footer */
+/* 6. Footer */
 footer {
     background-color: var(--color-text);
-    color: var(--color-bg);
-    padding: var(--spacing-lg) 0;
-    margin-top: var(--spacing-xl);
-    text-align: center;
+    color: #fff;
+    padding: 4rem 0;
+    margin-top: 6rem;
 }
 
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    align-items: center;
+footer a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
 }
 
-.social-links {
-    display: flex;
-    gap: var(--spacing-md);
-}
-
-.copyright {
-    font-size: 0.8rem;
-    opacity: 0.6;
+footer a:hover {
+    opacity: 1;
 }

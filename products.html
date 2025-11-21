@@ -7,142 +7,152 @@
     <title>Shop | Sea-to-Sky Collective</title>
     <meta name="description"
         content="Browse our collection of minimalist prints inspired by British Columbia's landscapes.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Sea-to-Sky Collective</a>
-            <nav class="nav-links">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="products.html" class="nav-link"
-                    style="opacity: 1; border-bottom: 2px solid var(--color-text);">Shop</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="#" class="nav-link">Cart (0)</a>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Sea-to-Sky Collective</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="products.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cart (0)</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <ul>
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="products.html" class="nav-link">Shop</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="#" class="nav-link">Cart (0)</a></li>
-        </ul>
-    </div>
+    </nav>
 
     <!-- Shop Section -->
-    <section class="section container" style="margin-top: var(--header-height);">
-        <h1 style="text-align: center; margin-bottom: var(--spacing-lg);">Shop Prints</h1>
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <h1 class="text-center mb-5">Shop Prints</h1>
 
-        <div class="grid grid-3">
+            <div class="row g-4">
 
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/images/product_placeholder.jpg" alt="The Chief Silhouette">
+                <!-- Product 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="assets/images/product_placeholder.jpg" class="card-img-top"
+                            alt="The Chief Silhouette">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">The Chief Silhouette</h2>
+                            <span class="price">$45.00 CAD</span>
+                            <a href="#" class="btn btn-custom w-100">Buy Now</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h2 class="product-title">The Chief Silhouette</h2>
-                    <p class="product-price">$45.00 CAD</p>
-                    <!-- Lemon Squeezy Placeholder -->
-                    <a href="#" class="btn buy-button">Buy Now</a>
+
+                <!-- Product 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="assets/images/product_placeholder.jpg" class="card-img-top" alt="Black Tusk Line Art">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Black Tusk Line Art</h2>
+                            <span class="price">$45.00 CAD</span>
+                            <a href="#" class="btn btn-custom w-100">Buy Now</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Product 3 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="assets/images/product_placeholder.jpg" class="card-img-top" alt="Lions Gate Fog">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Lions Gate Fog</h2>
+                            <span class="price">$55.00 CAD</span>
+                            <a href="#" class="btn btn-custom w-100">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="assets/images/product_placeholder.jpg" class="card-img-top" alt="Whistler Peak">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Whistler Peak</h2>
+                            <span class="price">$45.00 CAD</span>
+                            <a href="#" class="btn btn-custom w-100">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="assets/images/product_placeholder.jpg" class="card-img-top" alt="Howe Sound Horizon">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Howe Sound Horizon</h2>
+                            <span class="price">$50.00 CAD</span>
+                            <a href="#" class="btn btn-custom w-100">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="assets/images/product_placeholder.jpg" class="card-img-top" alt="Garibaldi Lake">
+                        <div class="card-body">
+                            <h2 class="h5 card-title">Garibaldi Lake</h2>
+                            <span class="price">$55.00 CAD</span>
+                            <a href="#" class="btn btn-custom w-100">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/images/product_placeholder.jpg" alt="Black Tusk Line Art">
-                </div>
-                <div class="product-info">
-                    <h2 class="product-title">Black Tusk Line Art</h2>
-                    <p class="product-price">$45.00 CAD</p>
-                    <a href="#" class="btn buy-button">Buy Now</a>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/images/product_placeholder.jpg" alt="Lions Gate Fog">
-                </div>
-                <div class="product-info">
-                    <h2 class="product-title">Lions Gate Fog</h2>
-                    <p class="product-price">$55.00 CAD</p>
-                    <a href="#" class="btn buy-button">Buy Now</a>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/images/product_placeholder.jpg" alt="Whistler Peak">
-                </div>
-                <div class="product-info">
-                    <h2 class="product-title">Whistler Peak</h2>
-                    <p class="product-price">$45.00 CAD</p>
-                    <a href="#" class="btn buy-button">Buy Now</a>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/images/product_placeholder.jpg" alt="Howe Sound Horizon">
-                </div>
-                <div class="product-info">
-                    <h2 class="product-title">Howe Sound Horizon</h2>
-                    <p class="product-price">$50.00 CAD</p>
-                    <a href="#" class="btn buy-button">Buy Now</a>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="assets/images/product_placeholder.jpg" alt="Garibaldi Lake">
-                </div>
-                <div class="product-info">
-                    <h2 class="product-title">Garibaldi Lake</h2>
-                    <p class="product-price">$55.00 CAD</p>
-                    <a href="#" class="btn buy-button">Buy Now</a>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="logo">Sea-to-Sky Collective</div>
-            <div class="social-links">
+    <footer class="text-center">
+        <div class="container">
+            <div class="mb-4">
+                <span class="h5 text-uppercase fw-bold">Sea-to-Sky Collective</span>
+            </div>
+            <div class="d-flex justify-content-center gap-4 mb-4">
                 <a href="#">Instagram</a>
                 <a href="#">Twitter</a>
                 <a href="#">Email</a>
             </div>
-            <p class="copyright">&copy; 2025 Sea-to-Sky Collective. All rights reserved.</p>
+            <p class="small mb-0 opacity-75">&copy; 2025 Sea-to-Sky Collective. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
