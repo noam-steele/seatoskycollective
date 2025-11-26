@@ -131,22 +131,34 @@
         </div>
     </div>
 
-    <!-- Cart Sidebar -->
-    <div id="cart-overlay"></div>
-    <div id="cart-sidebar">
-        <div class="cart-header">
-            <h2>Your Cart</h2>
-            <button class="close-cart" onclick="closeCart()">&times;</button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Items injected by JS -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total</span>
-                <span id="cart-total">$0.00 CAD</span>
+    <!-- Cart Modal (New Design) -->
+    <div id="cart-modal">
+        <div class="cart-container">
+            <!-- Left Column: Items -->
+            <div class="cart-main">
+                <div class="cart-header-row">
+                    <h2>Shopping Cart</h2>
+                    <span class="items-count cart-count">3 Items</span>
+                </div>
+                <div class="cart-labels">
+                    <div class="col-details">Product Details</div>
+                    <div class="col-qty">Quantity</div>
+                    <div class="col-price">Price</div>
+                    <div class="col-total">Total</div>
+                </div>
+                <div id="cart-items-container">
+                    <!-- Items injected by JS -->
+                </div>
+                <a href="#" class="continue-shopping" onclick="closeCart(); return false;">&larr; Continue Shopping</a>
             </div>
-            <button class="btn btn-custom w-100">Checkout</button>
+
+            <!-- Right Column: Summary -->
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div id="cart-summary-container">
+                    <!-- Summary injected by JS -->
+                </div>
+            </div>
         </div>
     </div>
 

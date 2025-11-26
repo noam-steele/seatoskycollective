@@ -170,6 +170,18 @@ function removeFromCart(index) {
     saveCart();
 }
 
+function incrementQuantity(index) {
+    cart[index].quantity += 1;
+    saveCart();
+}
+
+function decrementQuantity(index) {
+    if (cart[index].quantity > 1) {
+        cart[index].quantity -= 1;
+        saveCart();
+    }
+}
+
 function saveCart() {
     localStorage.setItem('s2sc_cart', JSON.stringify(cart));
     updateCartUI();
@@ -180,45 +192,84 @@ function updateCartUI() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCountElements.forEach(el => el.innerText = `Cart (${totalItems})`);
 
-    // Update Sidebar List
-    const cartItemsContainer = document.getElementById('cart-items');
-    if (cartItemsContainer) {
+    // Update Cart Modal Content
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartSummaryContainer = document.getElementById('cart-summary-container');
+
+    if (cartItemsContainer && cartSummaryContainer) {
+        // Items Column
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
         } else {
             cartItemsContainer.innerHTML = cart.map((item, index) => `
-                <div class="cart-item">
-                    <img src="${item.image}" alt="${item.title}">
-                    <div class="cart-item-details">
-                        <h4>${item.title}</h4>
-                        <p class="variant">${item.size}</p>
-                        <div class="price-row">
-                            <span>$${item.price.toFixed(2)}</span>
-                            <span class="quantity">x${item.quantity}</span>
+                <div class="cart-row">
+                    <div class="cart-product-col">
+                        <img src="${item.image}" alt="${item.title}">
+                        <div class="cart-item-info">
+                            <h4>${item.title}</h4>
+                            <p class="variant">${item.size}</p>
+                            <button class="remove-link" onclick="removeFromCart(${index})">Remove</button>
                         </div>
                     </div>
-                    <button class="remove-item" onclick="removeFromCart(${index})">&times;</button>
+                    <div class="cart-quantity-col">
+                        <div class="quantity-control">
+                            <button onclick="decrementQuantity(${index})">-</button>
+                            <input type="text" value="${item.quantity}" readonly>
+                            <button onclick="incrementQuantity(${index})">+</button>
+                        </div>
+                    </div>
+                    <div class="cart-price-col">
+                        $${item.price.toFixed(2)}
+                    </div>
+                    <div class="cart-total-col">
+                        $${(item.price * item.quantity).toFixed(2)}
+                    </div>
                 </div>
             `).join('');
         }
-    }
 
-    // Update Total
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const cartTotalElement = document.getElementById('cart-total');
-    if (cartTotalElement) {
-        cartTotalElement.innerText = `$${total.toFixed(2)} CAD`;
+        // Summary Column
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const shipping = 5.00; // Standard Delivery Mock
+        const total = subtotal + shipping;
+
+        cartSummaryContainer.innerHTML = `
+            <div class="summary-row">
+                <span>ITEMS ${totalItems}</span>
+                <span>$${subtotal.toFixed(2)}</span>
+            </div>
+            <div class="summary-section">
+                <label>SHIPPING</label>
+                <select class="form-select">
+                    <option>Standard Delivery - $5.00</option>
+                </select>
+            </div>
+            <div class="summary-section">
+                <label>PROMO CODE</label>
+                <input type="text" placeholder="Enter your code" class="form-control mb-2">
+                <button class="btn btn-danger text-white w-auto px-4" style="font-size: 0.8rem;">APPLY</button>
+            </div>
+            <div class="summary-total">
+                <span>TOTAL COST</span>
+                <span>$${total.toFixed(2)}</span>
+            </div>
+            <button class="btn btn-primary w-100 mt-4">CHECKOUT</button>
+        `;
     }
 }
 
 function openCart() {
-    cartSidebar.classList.add('active');
-    cartOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const cartModal = document.getElementById('cart-modal');
+    if (cartModal) {
+        cartModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closeCart() {
-    cartSidebar.classList.remove('active');
-    cartOverlay.classList.remove('active');
-    document.body.style.overflow = '';
+    const cartModal = document.getElementById('cart-modal');
+    if (cartModal) {
+        cartModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
