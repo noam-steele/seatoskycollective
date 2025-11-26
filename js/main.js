@@ -46,6 +46,21 @@ const products = [
         ],
         sizes: ["One Size"],
         type: "apparel"
+    },
+    {
+        id: "ski-dad-hat-blue",
+        title: "Ski. Dad Hat - Vintage Blue",
+        price: 35.00,
+        currency: "CAD",
+        description: "Low profile, unstructured dad hat in vintage light blue denim. 'Ski.' embroidered in black. 100% Cotton Chino Twill. Adjustable strap.",
+        images: [
+            "assets/images/ski_hat_blue_front.png",
+            "assets/images/ski_hat_blue_model_f.png",
+            "assets/images/ski_hat_blue_side.png",
+            "assets/images/ski_hat_blue_model_m.jpg"
+        ],
+        sizes: ["One Size"],
+        type: "apparel"
     }
 ];
 
