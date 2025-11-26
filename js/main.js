@@ -31,6 +31,21 @@ const products = [
         ],
         sizes: ["One Size"],
         type: "apparel"
+    },
+    {
+        id: "ski-tote-bag",
+        title: "Ski. Organic Tote Bag",
+        price: 25.00,
+        currency: "CAD",
+        description: "Eco-friendly organic cotton tote bag featuring the minimalist 'Ski.' mountain design. Durable and spacious.",
+        images: [
+            "assets/images/ski_tote_front.png",
+            "assets/images/ski_tote_model.png",
+            "assets/images/ski_tote_flat.png",
+            "assets/images/ski_tote_detail.png"
+        ],
+        sizes: ["One Size"],
+        type: "apparel"
     }
 ];
 
