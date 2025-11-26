@@ -594,6 +594,8 @@ footer a:hover {
     padding: 3rem;
     display: flex;
     flex-direction: column;
+    color: #333;
+    /* Darker text for contrast */
 }
 
 .cart-summary h3 {
@@ -602,6 +604,7 @@ footer a:hover {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid #ddd;
+    color: #222;
 }
 
 .summary-row {
@@ -609,6 +612,7 @@ footer a:hover {
     justify-content: space-between;
     font-weight: 600;
     margin-bottom: 2rem;
+    color: #333;
 }
 
 .summary-section {
@@ -621,6 +625,7 @@ footer a:hover {
     font-weight: 700;
     margin-bottom: 0.75rem;
     text-transform: uppercase;
+    color: #333;
 }
 
 .summary-total {
