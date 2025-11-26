@@ -71,8 +71,7 @@ let selectedSize = null;
 
 // --- DOM Elements ---
 const modal = document.getElementById('product-modal');
-const cartSidebar = document.getElementById('cart-sidebar');
-const cartOverlay = document.getElementById('cart-overlay');
+const cartModal = document.getElementById('cart-modal');
 const cartCountElements = document.querySelectorAll('.cart-count');
 
 // --- Initialization ---
@@ -90,8 +89,10 @@ function setupEventListeners() {
     }
 
     // Close cart on outside click
-    if (cartOverlay) {
-        cartOverlay.addEventListener('click', closeCart);
+    if (cartModal) {
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) closeCart();
+        });
     }
 }
 
