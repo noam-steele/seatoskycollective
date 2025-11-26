@@ -348,6 +348,8 @@ footer a:hover {
     font-family: var(--font-heading);
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: #0A1628;
+    /* Dark Navy for contrast */
 }
 
 .modal-details .price {
@@ -680,6 +682,8 @@ footer a:hover {
     .modal-gallery {
         padding: 1rem;
         background: #f8f9fa;
+        margin-bottom: 1rem;
+        /* Prevent overlap */
     }
 
     .modal-details {
