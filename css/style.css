@@ -664,25 +664,39 @@ footer a:hover {
 @media (max-width: 768px) {
     #modal-content {
         flex-direction: column;
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-        max-height: none;
+        width: 95%;
+        height: auto;
+        max-height: 90vh;
+        border-radius: 12px;
+        overflow-y: auto;
     }
 
     .modal-gallery,
     .modal-details {
         width: 100%;
+        height: auto;
     }
 
     .modal-gallery {
-        height: 40%;
         padding: 1rem;
+        background: #f8f9fa;
     }
 
     .modal-details {
-        height: 60%;
         padding: 1.5rem;
+    }
+
+    .close-modal {
+        top: 0.5rem;
+        right: 0.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .cart-container {
