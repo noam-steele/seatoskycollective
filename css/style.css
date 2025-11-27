@@ -331,33 +331,8 @@ footer a:hover {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.thumbnail-list {
-    display: flex;
-    gap: 0.5rem;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
-    min-height: 70px;
-    /* Ensure space for thumbnails */
-}
+/* Thumbnail styles removed */
 
-.thumbnail-list img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-    border: 2px solid transparent;
-    flex-shrink: 0;
-    /* Prevent shrinking */
-}
-
-.thumbnail-list img.active,
-.thumbnail-list img:hover {
-    opacity: 1;
-    border-color: var(--color-primary);
-}
 
 .modal-details {
     width: 45%;
@@ -375,7 +350,7 @@ footer a:hover {
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #0A1628;
+    color: #0A1628 !important;
     /* Dark Navy */
     z-index: 10;
 }
@@ -383,21 +358,23 @@ footer a:hover {
 .modal-details h2 {
     font-family: var(--font-heading);
     font-size: 2rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: #0A1628;
+    color: #0A1628 !important;
     /* Dark Navy for contrast */
 }
 
 .modal-details .price {
     font-size: 1.25rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    color: #0A1628;
+    color: #0A1628 !important;
     /* Dark Navy */
     margin-bottom: 1.5rem;
 }
 
 .modal-details .description {
-    color: #0A1628;
+    color: #0A1628 !important;
     /* Dark Navy */
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -407,7 +384,7 @@ footer a:hover {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: #0A1628;
+    color: #0A1628 !important;
     /* Dark Navy */
 }
 
@@ -425,7 +402,7 @@ footer a:hover {
     cursor: pointer;
     transition: all 0.2s;
     font-family: var(--font-body);
-    color: #0A1628;
+    color: #0A1628 !important;
     /* Dark Navy */
 }
 
