@@ -291,13 +291,39 @@ footer a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    /* For overlay positioning */
+    border-radius: 8px;
+    overflow: hidden;
+    /* Clip the overlay */
+    margin-bottom: 1rem;
+    /* Space for thumbnails */
 }
 
 .main-image img {
-    max-width: 100%;
-    max-height: 50vh;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Fill the area */
     border-radius: 8px;
+}
+
+.image-overlay-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 2rem 1rem 1rem 1rem;
+    color: #fff;
+    text-align: left;
+}
+
+.image-overlay-title h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .thumbnail-list {
@@ -305,6 +331,8 @@ footer a:hover {
     gap: 0.5rem;
     overflow-x: auto;
     padding-bottom: 0.5rem;
+    min-height: 70px;
+    /* Ensure space for thumbnails */
 }
 
 .thumbnail-list img {
@@ -316,6 +344,8 @@ footer a:hover {
     opacity: 0.6;
     transition: opacity 0.2s;
     border: 2px solid transparent;
+    flex-shrink: 0;
+    /* Prevent shrinking */
 }
 
 .thumbnail-list img.active,

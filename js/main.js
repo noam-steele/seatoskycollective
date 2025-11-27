@@ -122,6 +122,9 @@ function openModal(productId) {
         <div class="modal-gallery">
             <div class="main-image">
                 <img src="${product.images[0]}" id="modal-main-image" alt="${product.title}">
+                <div class="image-overlay-title">
+                    <h2>${product.title}</h2>
+                </div>
             </div>
             <div class="thumbnail-list">
                 ${imagesHtml}
@@ -129,7 +132,6 @@ function openModal(productId) {
         </div>
         <div class="modal-details">
             <button class="close-modal" onclick="closeModal()">&times;</button>
-            <h2>${product.title}</h2>
             <p class="price">$${product.price.toFixed(2)} ${product.currency}</p>
             <p class="description">${product.description}</p>
             
