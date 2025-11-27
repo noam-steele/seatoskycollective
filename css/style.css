@@ -716,6 +716,12 @@ footer a:hover {
         /* Prevent overlap */
     }
 
+    .main-image {
+        max-height: 50vh;
+        /* Limit height to keep content visible */
+        width: 100%;
+    }
+
     .modal-details {
         padding: 1.5rem;
     }
