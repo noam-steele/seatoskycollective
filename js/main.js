@@ -295,7 +295,7 @@ function updateCartUI() {
                 <span>TOTAL COST</span>
                 <span>$${total.toFixed(2)}</span>
             </div>
-            <button class="btn btn-primary w-100 mt-4">CHECKOUT</button>
+            <a href="404.html" class="btn btn-primary w-100 mt-4 text-decoration-none d-block text-center">CHECKOUT</a>
         `;
     }
 }
