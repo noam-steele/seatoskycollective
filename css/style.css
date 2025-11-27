@@ -375,7 +375,8 @@ footer a:hover {
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #666;
+    color: #0A1628;
+    /* Dark Navy */
     z-index: 10;
 }
 
@@ -390,12 +391,14 @@ footer a:hover {
 .modal-details .price {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: #0A1628;
+    /* Dark Navy */
     margin-bottom: 1.5rem;
 }
 
 .modal-details .description {
-    color: #666;
+    color: #0A1628;
+    /* Dark Navy */
     line-height: 1.6;
     margin-bottom: 2rem;
 }
@@ -404,6 +407,8 @@ footer a:hover {
     display: block;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: #0A1628;
+    /* Dark Navy */
 }
 
 .sizes-container {
