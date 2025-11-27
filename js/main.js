@@ -98,20 +98,18 @@ function setupEventListeners() {
 
 // --- Modal Logic ---
 
+let currentImageIndex = 0;
+
 function openModal(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
     currentProduct = product;
     selectedSize = product.sizes[0]; // Default to first size
+    currentImageIndex = 0; // Reset image index
 
     // Populate Modal Content
     const modalContent = document.getElementById('modal-content');
-
-    // Generate Image Gallery HTML
-    const imagesHtml = product.images.map((img, index) => `
-        <img src="${img}" alt="${product.title} view ${index + 1}" class="${index === 0 ? 'active' : ''}" onclick="setMainImage(this.src)">
-    `).join('');
 
     // Generate Sizes HTML
     const sizesHtml = product.sizes.map(size => `
@@ -120,14 +118,11 @@ function openModal(productId) {
 
     modalContent.innerHTML = `
         <div class="modal-gallery">
-            <div class="main-image">
+            <div class="main-image" onclick="handleImageClick(event)" style="cursor: pointer;">
                 <img src="${product.images[0]}" id="modal-main-image" alt="${product.title}">
                 <div class="image-overlay-title">
                     <h2>${product.title}</h2>
                 </div>
-            </div>
-            <div class="thumbnail-list">
-                ${imagesHtml}
             </div>
         </div>
         <div class="modal-details">
@@ -156,8 +151,24 @@ function closeModal() {
     currentProduct = null;
 }
 
-function setMainImage(src) {
-    document.getElementById('modal-main-image').src = src;
+function handleImageClick(event) {
+    if (!currentProduct) return;
+
+    const container = event.currentTarget;
+    const width = container.offsetWidth;
+    const clickX = event.offsetX;
+
+    if (clickX > width / 2) {
+        // Clicked right side -> Next image
+        currentImageIndex = (currentImageIndex + 1) % currentProduct.images.length;
+    } else {
+        // Clicked left side -> Previous image
+        currentImageIndex = (currentImageIndex - 1 + currentProduct.images.length) % currentProduct.images.length;
+    }
+
+    // Update Image
+    document.getElementById('modal-main-image').src = currentProduct.images[currentImageIndex];
+}
 }
 
 function selectSize(size) {
