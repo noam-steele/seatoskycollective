@@ -425,6 +425,8 @@ footer a:hover {
     cursor: pointer;
     transition: all 0.2s;
     font-family: var(--font-body);
+    color: #0A1628;
+    /* Dark Navy */
 }
 
 .size-btn:hover {
