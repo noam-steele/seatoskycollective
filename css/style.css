@@ -340,6 +340,18 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    color: #0A1628 !important;
+    /* Force Navy for everything */
+}
+
+.modal-details * {
+    color: inherit;
+    /* Ensure children inherit the forced color */
+}
+
+.modal-details .btn-custom {
+    color: #fff !important;
+    /* Keep button text white */
 }
 
 .close-modal {

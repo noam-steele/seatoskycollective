@@ -167,7 +167,7 @@ function handleImageClick(event) {
     // Update Image
     document.getElementById('modal-main-image').src = currentProduct.images[currentImageIndex];
 }
-}
+
 
 function selectSize(size) {
     selectedSize = size;
